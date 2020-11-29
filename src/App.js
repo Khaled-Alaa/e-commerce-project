@@ -1,6 +1,6 @@
 import MainBar from "./Components/mainbar/mainbar";
-/*import Slider from "./Components/Slider";
-import Card from "./Components/card";
+import Slider from "./Components/slider/slider";
+/*import Card from "./Components/card";
 import Form from "./Components/form";
 import FooterBar from "./Components/footer";*/
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -11,8 +11,8 @@ function App() {
     <Router>
       <div className="App">
         <MainBar />
-        {/*}<Route exact path="/" render={() => <Slider />} />
-        <Route path="/shop" component={Card} />
+        <Route exact path="/" render={() => <Slider />} />
+        {/*}<Route path="/shop" component={Card} />
         <Route path="/contactus" component={Form} />
   <FooterBar />{*/}
       </div>
