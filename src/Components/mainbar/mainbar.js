@@ -19,31 +19,13 @@ class MainBar extends React.Component {
           <img alt="logo" src={logo} className="logo"></img>
         </Link>
         <Nav className="mr-auto ">
-          <Link
-            to="/shop"
-            style={{
-              color: "white",
-              margin: "0 .5rem",
-            }}
-          >
+          <Link to="/shop" className="mainbar-links">
             Shop
           </Link>
-          <Link
-            to="/creator"
-            style={{
-              color: "white",
-              margin: "0 .5rem",
-            }}
-          >
+          <Link to="/creator" className="mainbar-links">
             About
           </Link>
-          <Link
-            to="/contactus"
-            style={{
-              color: "white",
-              margin: "0 .5rem",
-            }}
-          >
+          <Link to="/contactus" className="mainbar-links">
             Contact Us
           </Link>
         </Nav>
