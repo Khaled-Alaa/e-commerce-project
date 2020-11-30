@@ -1,12 +1,22 @@
 body {
   background-color: #343a40;
 }
-.footer {
-  /* padding: 2rem 0; 
+
+/*.footer {
+  padding: 2rem 0; 
   width: 100%;
   position: absolute;
   left: 50%;
   top: 100%;
   transform: translate(-50%, -50%);
-  color: white;*/
+  color: white;
+}*/
+
+.contact-us-container {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
 }
