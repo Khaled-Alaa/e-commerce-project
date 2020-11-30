@@ -2,5 +2,11 @@ body {
   background-color: #343a40;
 }
 .footer {
-  padding: 2rem 0;
-} 
+  /* padding: 2rem 0; 
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  color: white;*/
+}
