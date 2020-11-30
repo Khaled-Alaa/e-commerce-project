@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 
-function Slider() {
+function contactUs() {
   return (
     <Card className="contact-us-container">
       <Form>
@@ -23,4 +23,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default contactUs;
