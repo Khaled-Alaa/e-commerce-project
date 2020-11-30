@@ -1,6 +1,15 @@
 body {
   background-color: #343a40;
 }
-.footer {
+/* .footer {
   padding: 2rem 0;
-} 
+}  */
+
+.contact-us-container {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+}
