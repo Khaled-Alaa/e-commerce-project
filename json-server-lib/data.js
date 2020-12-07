@@ -5,7 +5,7 @@ module.exports = () => {
         id: "p1",
         product_name: "Divol",
         product_img:
-          "https://apollo-ireland.akamaized.net/v1/files/7c6qfaneulsn1-EG/image;s=644x461;olx-st/_2_.jpg",
+          "https://apollo-ireland.akamaized.net/v1/files/ta9cqu603nd43-EG/image;s=644x461;olx-st/_3_.jpg",
         product_pref: "Divol is a brand for kids natural shampoo 300ml",
       },
       {

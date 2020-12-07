@@ -25,7 +25,6 @@ class Slider extends Component {
     return (
       <Carousel>
         {this.state.data.map((ad) => {
-          debugger;
           return (
             <Carousel.Item interval={1000}>
               <img className="d-block w-100" src={ad.ad_img} alt={ad.id} />
