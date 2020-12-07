@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import logo from "../../images/kha`.png";
+import logo from "../../images/khaa.png";
 
 import "./mainbar.css";
 

@@ -1,34 +1,42 @@
+import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import slide1 from "../../images/1.jpg";
-import slide2 from "../../images/2.jpg";
-import slide3 from "../../images/3.png";
 
-function Slider() {
-  return (
-    <div>
+const axios = require("axios");
+
+class Slider extends Component {
+  state = {
+    data: [],
+  };
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:3004/advertising")
+      .then((resp) => {
+        debugger;
+        this.setState({
+          data: resp.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  render() {
+    return (
       <Carousel>
-        <Carousel.Item interval={1000}>
-          <img className="d-block w-100" src={slide1} alt="First slide" />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={1000}>
-          <img className="d-block w-100" src={slide2} alt="Second slide" />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={1000}>
-          <img className="d-block w-100" src={slide3} alt="Third slide" />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
+        {this.state.data.map((ad) => {
+          debugger;
+          return (
+            <Carousel.Item interval={1000}>
+              <img className="d-block w-100" src={ad.ad_img} alt={ad.id} />
+              <Carousel.Caption>
+                <h3></h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+          );
+        })}
       </Carousel>
-      <div></div>
-    </div>
-  );
+    );
+  }
 }
-
 export default Slider;

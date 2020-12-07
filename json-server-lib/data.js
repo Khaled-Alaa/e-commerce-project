@@ -47,13 +47,13 @@ module.exports = () => {
       {
         id: "a2",
         ad_img:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkmxpc5AeWtWoWqRmvqtbZCjtpt9QI4xa3OQ&usqp=CAU",
+          "https://www.a2magazine.co.za/wp-content/uploads/2015/10/11.jpg",
         ad_link: "rob23@gmail.com",
       },
       {
         id: "a3",
         ad_img:
-          ".https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvqJdqQxUik-pmxlzpT11saNFdhO5o_4HYkA&usqp=CAU",
+          "https://www.cosmetheque.com/images/Professional_Access/FL_banner_2018.png",
         ad_link: "rob23@gmail.com",
       },
     ],
