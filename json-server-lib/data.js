@@ -62,6 +62,10 @@ module.exports = () => {
         ad_link: "rob23@gmail.com",
       },
     ],
+    category: [
+      { id: "c1", category_name: "shampoo" },
+      { id: "c2", category_name: "natural shampoo" },
+    ],
   };
   return companyData;
 };

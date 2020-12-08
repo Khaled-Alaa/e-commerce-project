@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import sample from "../../images/qwe.jpg";
 
-import "./card.css";
+import "./card.scss";
 
 const axios = require("axios");
 
@@ -31,7 +31,7 @@ class Product extends Component {
           bg={variant.toLowerCase()}
           key={idx}
           text={variant.toLowerCase() === "light" ? "dark" : "white"}
-          className="mb-2 card"
+          className="mb-2 card product-card"
         >
           <Card.Img variant="top" src={product.product_img} />
           <Card.Body>
