@@ -1,5 +1,5 @@
 import MainBar from "./Components/mainbar/mainbar";
-import Slider from "./Components/slider/slider";
+import homePage from "./pages/homepage/index";
 import FooterBar from "./Components/footer/footer";
 import AboutInfo from "./Components/about/about";
 import ContactUsForm from "./Components/contactus/contactus";
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="App">
         <MainBar />
-        <Route exact path="/" render={() => <Slider />} />
+        <Route exact path="/" component={homePage} />
         <Route path="/creator" component={AboutInfo} />
         <Route path="/contactus" component={ContactUsForm} />
         <Route path="/shop" component={shopPage} />
