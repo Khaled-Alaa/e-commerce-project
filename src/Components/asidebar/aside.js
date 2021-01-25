@@ -4,62 +4,73 @@ import Button from "react-bootstrap/Button";
 import "./aside.scss";
 import { Card } from "react-bootstrap";
 
-const axios = require("axios");
-
 class asidebar extends Component {
   constructor(props) {
     super(props);
-    this.state = { allData: [], data: [], values: [] };
+    this.state = { selectedFilters: {} };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
-  
-  componentDidMount() {
-    axios
-      .get("http://localhost:3004/category")
-      .then((resp) => {
-        this.setState({
-          data: resp.data,
-          allData: resp.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
 
-  handleChange(event, catid) {
-    this.setState({
-      values: [...this.state.values, catid],
-    });
+
+  handleChange(event) {
+    if (event.target.checked === true) {
+      this.setState({
+        selectedFilters: {
+          ...this.state.selectedFilters,
+          [event.target.name]: event.target.checked,
+        },
+      });
+    } else {
+      ////////////////// delete selected category when i unchecked it to can compare with products to draw the filtered data
+      const clonedSelectedFilters = { ...this.state.selectedFilters };
+      delete clonedSelectedFilters[event.target.name];
+      this.setState({
+        selectedFilters: clonedSelectedFilters,
+      });
+    }
   }
 
   handleSubmit(event) {
-    this.props.parentSubmitCallback(this.state.values);
+    const { actions } = this.props;
+    actions.onSubmit(this.state.selectedFilters);
     event.preventDefault();
   }
 
   handleReset(event) {
-    this.props.resetCallback();
+    const { actions } = this.props;
+    this.setState(
+      {
+        selectedFilters: {},
+      },
+      () => {
+        actions.onReset();
+      }
+    );
     event.preventDefault();
   }
+
   render() {
+    const { data } = this.props;
     return (
       <Card className="aside-bar-card">
         <Form onSubmit={this.handleSubmit} onReset={this.handleReset}>
           <Form.Group>
             <h4>categories</h4>
           </Form.Group>
-          {this.state.data.map((category) => {
+          {data.categories.map((category) => {
             return (
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
                   label={category.category_name}
                   id={category.id}
-                  value={category.category_name}
-                  onChange={(event) => this.handleChange(event, category.id)}
+                  name={category.id}
+                  ////////////////// checked is for if we checked the box become true and else become false but i change it to return the category id to konw who checked
+                  checked={this.state.selectedFilters[category.id]}
+                  onChange={(event) => this.handleChange(event)}
                 />
               </Form.Group>
             );
