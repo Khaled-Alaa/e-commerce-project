@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 
 import logo from "../../images/khaa.png";
 
-import "./mainbar.css";
+import "./mainbar.scss";
 
 import { Link } from "react-router-dom";
 

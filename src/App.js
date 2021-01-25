@@ -1,9 +1,9 @@
 import MainBar from "./Components/mainbar/mainbar";
-import Slider from "./Components/slider/slider";
+import homePage from "./pages/homepage/index";
 import FooterBar from "./Components/footer/footer";
 import AboutInfo from "./Components/about/about";
 import ContactUsForm from "./Components/contactus/contactus";
-import Product from "./Components/card/card";
+import shopPage from "./pages/shop/index";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,10 +15,10 @@ function App() {
     <Router>
       <div className="App">
         <MainBar />
-        <Route exact path="/" render={() => <Slider />} />
+        <Route exact path="/" component={homePage} />
         <Route path="/creator" component={AboutInfo} />
         <Route path="/contactus" component={ContactUsForm} />
-        <Route path="/shop" component={Product} />
+        <Route path="/shop" component={shopPage} />
         <FooterBar />
       </div>
     </Router>
