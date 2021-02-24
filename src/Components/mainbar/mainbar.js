@@ -8,8 +8,8 @@ import Button from "react-bootstrap/Button";
 import logo from "../../images/khaa.png";
 
 import "./mainbar.scss";
-
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class MainBar extends React.Component {
   render() {
@@ -31,10 +31,22 @@ class MainBar extends React.Component {
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
+          {/*<Button variant="outline-info">Search</Button>*/}
         </Form>
+        <Link to="/cart" className="mainbar-links">
+          <i className="fas fa-shopping-cart shopping-car"></i> Cart
+          <span>
+            {" "}
+            {this.props.products.length ? this.props.products.length : ""}
+          </span>
+        </Link>
       </Navbar>
     );
   }
 }
-export default MainBar;
+const mapStoreToProps = (store) => {
+  return {
+    products: store.cart,
+  };
+};
+export default connect(mapStoreToProps)(MainBar);
