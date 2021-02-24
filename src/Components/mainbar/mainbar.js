@@ -8,7 +8,6 @@ import Button from "react-bootstrap/Button";
 import logo from "../../images/khaa.png";
 
 import "./mainbar.scss";
-
 import { Link } from "react-router-dom";
 
 class MainBar extends React.Component {
@@ -33,6 +32,10 @@ class MainBar extends React.Component {
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-info">Search</Button>
         </Form>
+        <Link to="/cart" className="mainbar-links">
+          <i className="fas fa-shopping-cart shopping-car"></i>
+          Cart
+        </Link>
       </Navbar>
     );
   }
